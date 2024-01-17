@@ -23,6 +23,11 @@ public class Player : MonoBehaviour
         transform.forward = Vector3.Slerp(transform.forward, movementDirection, Time.deltaTime * rotateSpeed);
     }
 
+    public bool IsWalking()
+    {
+        return movementInput != Vector2.zero;
+    }
+
     public void OnMovement(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();

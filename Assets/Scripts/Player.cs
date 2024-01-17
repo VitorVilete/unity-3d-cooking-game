@@ -5,17 +5,16 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private Vector2 movementInput;
     [SerializeField] private float moveSpeed = 7.0f;
-   
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameInput gameInput;
 
+    private bool isWalking;
+   
     void Update()
     {
-        Vector3 movementDirection = new Vector3(movementInput.x, 0, movementInput.y);
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector3 movementDirection = new Vector3(inputVector.x, 0, inputVector.y);
+        isWalking = movementDirection != Vector3.zero;
         transform.position += movementDirection * moveSpeed * Time.deltaTime;
 
         float rotateSpeed = 10f;
@@ -25,15 +24,7 @@ public class Player : MonoBehaviour
 
     public bool IsWalking()
     {
-        return movementInput != Vector2.zero;
+        return isWalking;
     }
 
-    public void OnMovement(InputAction.CallbackContext context)
-    {
-        movementInput = context.ReadValue<Vector2>();
-        if (context.performed)
-        {
-            Debug.Log(context.ToString());
-        }
-    }
 }

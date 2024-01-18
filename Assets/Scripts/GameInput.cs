@@ -19,5 +19,5 @@ public class GameInput : MonoBehaviour
         inputVector = inputVector.normalized;
 
         return inputVector;
-}
+    }
 }

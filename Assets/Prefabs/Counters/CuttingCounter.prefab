@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 7735621373316794455}
   - component: {fileID: 7952559731004742300}
   - component: {fileID: 5273234253759282690}
+  - component: {fileID: 6876054175749544232}
   m_Layer: 6
   m_Name: ProgressBarUI
   m_TagString: Untagged
@@ -193,6 +194,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuttingCounter: {fileID: 7546281040401939962}
   barImage: {fileID: 1797572232564879388}
+--- !u!114 &6876054175749544232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901065789880531679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ad1ae180f53294a91702f359fbcdde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 1
 --- !u!1 &7670416375415102691
 GameObject:
   m_ObjectHideFlags: 0
